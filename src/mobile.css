@@ -1,0 +1,33 @@
+
+/* toast custom */
+.Toastify__toast {
+  min-height: auto !important;
+  padding: 8px 15px !important;
+  margin-bottom: 4rem !important;
+}
+
+.Toastify__toast-container {
+  text-align: center;
+}
+
+.Toastify__close-button {
+  display: ruby-base;
+}
+
+.toast_alert {
+  display: inline-flex;
+  background-color: #f8d6b1;
+  border-radius: 28px;
+  color: #180f06;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* 디자인 아직 없음 사용안하면 나중에 삭제 */
+.toast_success {
+  background-color: #f8d6b1;
+  text-align: center;
+  border-radius: 20px;
+}
+
+/*hover*/

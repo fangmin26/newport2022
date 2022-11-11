@@ -2,7 +2,11 @@ import React from 'react'
 
 const Findid = () => {
   return (
-    <div>Findid</div>
+    <div className='h-screen '>
+      <div>
+        
+      </div>
+    </div>
   )
 }
 

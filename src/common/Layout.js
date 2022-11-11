@@ -9,11 +9,10 @@ const Layout = ({children}) => {
         <>
           <main className="flex justify-center h-screen antialiased bg-gray_95 pb-[120px]">
             {children}
-            {/* <Footer/> */}
           </main>
         </>
       ) : (
-        <main className={"flex flex-col h-screen max-w-md mx-auto antialiased " + (path === '/' ? 'bg-gray_90' : '')}>
+        <main className="flex flex-col h-screen max-w-md mx-auto antialiased h-screen relative ">
           {children}
         </main>
       )}
