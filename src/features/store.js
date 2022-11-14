@@ -6,12 +6,15 @@ import thunk from "redux-thunk";
 
 //mobile
 import commonApp from "./mobile/commonApp";
-//admin
 
+//admin
+import commonAdmin from "./admin/commonAdmin";
 
 const reducers = combineReducers({
   //app
   commonApp: commonApp,
+  //admin
+  commonAdmin:commonAdmin
 });
 
 const persistConfig = {
