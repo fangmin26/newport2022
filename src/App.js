@@ -26,13 +26,13 @@ function App() {
         <Routes>
           {/* app */}
           <Route path = "/signin" element={<Signin/>}/>
-          <Route path = "/" element = {<Main/>}/>
+          {/* <Route path = "/" element = {<Main/>}/> */}
           <Route path = "/findid" element = {<Findid/>}/>
           <Route path = "/findpw" element = {<Findpw/>}/>
           <Route path = "/signup" element = {<Signup/>}/>
           <Route path = "/signup2" element = {<Signup2/>}/>
           {/* admin */}
-          <Route path = "/admin" element = {<AdminMain/>}/>
+          <Route path = "/" element = {<AdminMain/>}/>
           <Route path = "/admin/signin" element = {<AdminSignin/>}/>
           <Route path = "/admin/project/webapp" element = {<WebApp/>}/>
           <Route path = "/admin/project/web" element = {<Web/>}/>     

@@ -2,7 +2,7 @@ export const SideBarLists = [
   {
     icon:"icon",
     title:"home",
-    titleLink:"/admin",
+    titleLink:"/",
   },
   {
     icon:"icon",
