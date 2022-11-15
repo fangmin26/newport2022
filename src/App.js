@@ -1,5 +1,5 @@
 import './App.css';
-import {  HashRouter, Route, Routes } from 'react-router-dom';
+import {  HashRouter, Route, Routes, } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Layout from './common/Layout';
@@ -32,7 +32,8 @@ function App() {
           <Route path = "/signup" element = {<Signup/>}/>
           <Route path = "/signup2" element = {<Signup2/>}/>
           {/* admin */}
-          <Route path = "/" element = {<AdminMain/>}/>
+          <Route path = "/" element = {<AdminSignin/>}/>
+          <Route path = "/admin/main" element = {<AdminMain/>}/>
           <Route path = "/admin/signin" element = {<AdminSignin/>}/>
           <Route path = "/admin/project/webapp" element = {<WebApp/>}/>
           <Route path = "/admin/project/web" element = {<Web/>}/>     
