@@ -20,7 +20,7 @@ import Account from './screens/admin/account/Account';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
       <ToastContainer/>
       <Layout>
         <Routes>
