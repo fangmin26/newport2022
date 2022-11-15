@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {  HashRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import Layout from './common/Layout';
@@ -20,7 +20,7 @@ import Account from './screens/admin/account/Account';
 
 function App() {
   return (
-    <BrowserRouter basename='/'>
+    <HashRouter>
       <ToastContainer/>
       <Layout>
         <Routes>
@@ -41,7 +41,7 @@ function App() {
           <Route path = "/admin/account" element = {<Account/>}/>        
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </HashR>
   );
 }
 
