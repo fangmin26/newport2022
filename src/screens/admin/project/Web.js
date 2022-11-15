@@ -7,6 +7,7 @@ import ProjectList from '../components/project/ProjectList'
 const Web = () => {
   return (
     <div className='w-full h-screen'>
+      <span>hi</span>
       <Sidebar/>
       <Navbar/>
       <div className='pt-[110px] pb-[60px]'>
