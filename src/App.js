@@ -41,7 +41,7 @@ function App() {
           <Route path = "/admin/account" element = {<Account/>}/>        
         </Routes>
       </Layout>
-    </HashR>
+    </HashRouter>
   );
 }
 
