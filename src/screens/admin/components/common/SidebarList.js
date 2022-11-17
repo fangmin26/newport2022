@@ -29,10 +29,9 @@ const SidebarList = ({el,idx}) => {
       <div className='flex justify-between py-4 cursor-pointer'
        onClick={()=>goLink("title")}>
         <div className='flex gap-x-4 '>
-          <span className='border'>{el.icon}</span>
-          <span>{el.title}</span> 
+          {el.title}
         </div>
-        <span className='border'>하</span>
+        <img src={process.env.PUBLIC_URL+"/img/arrow_down.svg"} alt="하단"/>
       </div>
       {titleName === el.title && el.subtitle1!==undefined ?
       <motion.div

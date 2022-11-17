@@ -4,17 +4,12 @@ import { SideBarLists } from '../../../../common/Data/AdminLists';
 import SidebarList from './SidebarList';
 
 const Sidebar = () => {
-  //navigation 접을때 토글 boolean
-  const sideToggle = useSelector((state) => state.commonAdmin.navActive);
+  const scrollFunc = useSelector((state)=>state.commonAdmin.scrollAction)
   return (
     <aside
-    className={
-      sideToggle
-      ? "fixed top-0 right-0 h-full flex-shrink-0 md-block md:w-[100px] bg-white border-l"
-      : "fixed top-0 right-0 h-full flex-shrink-0 md-block md:w-[220px] bg-white border-l"
-    }
-    >
-      <ul className='pt-[100px]'>
+    className="fixed top-0 right-0 h-full flex-shrink-0 md-block w-1/6 bg-white border-l">
+      <ul className=
+      {scrollFunc?'pt-[60px] transition-all duration-300 ease-in-out':'pt-[120px] transition-all duration-300 ease-in-out'}>
         {SideBarLists.map((el,idx)=>(
           <SidebarList el={el} key={idx} idx={idx}/>
         ))}

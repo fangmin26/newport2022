@@ -18,14 +18,19 @@ export const SideBarLists = [
     title:"skillset",
     subtitle1:"front",
     subtitle2:"back",
-    titleLink:"/admin/skillset/front",
-    subtitle1Link:"/admin/skillset/front",
-    subtitle2Link:"/admin/skillset/back"
+    titleLink:"/admin/skillset",
+    subtitle1Link:"/admin/skillset",
+    subtitle2Link:"/admin/skillset"
   },
   {
     icon:"icon",
-    title:"account",
-    titleLink:"/admin/account"
+    title:"toyprj",
+    titleLink:"/admin/toyprj"
+  },
+  {
+    icon:"icon",
+    title:"contact",
+    titleLink:"/admin/contact"
   }
 ]
 

@@ -1,4 +1,6 @@
 export const MainTabLists = ["intro","prj","skillset","toyprj","contact"];
+export const ToyPrjTHEAD = ["NO.","제목","작성날짜","수정날짜","작성자"];
+//mobile의 내용 admin에 붙일것
 export const MainContactLists0 = [
   {
     lefttextcolor:"text-white",

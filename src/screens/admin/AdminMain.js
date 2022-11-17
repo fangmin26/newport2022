@@ -1,17 +1,20 @@
 import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { adminSideTitle } from '../../features/admin/commonAdmin'
 import Navbar from './components/common/Navbar'
 import Sidebar from './components/common/Sidebar'
 
 const AdminMain = () => {
-
+  const dispatch = useDispatch()
   useEffect(()=>{
-
+    dispatch(adminSideTitle("home"))
   },[])
   return (
     <div className='w-full h-screen'>
       <Sidebar/>
       <Navbar/>
-      <div className='pt-[110px] pb-[60px]'>
+      <div className='pt-[110px] pb-[60px] px-[48px]'>
+        이력서와 사진을여기다가  
         자격증및 이전 경력사항 : 
         다양한 언어자격증, 컬러리스트기사, 웹디자인기능사,정보처리기사 필기합격,
         <br></br> 

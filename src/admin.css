@@ -1,0 +1,18 @@
+/*라이브러리 변형*/
+.pei_flex{
+  column-gap: 24px !important;
+}
+.pei_border:hover{
+border-bottom: 1px solid black;
+}
+.pei_listwidth_active{
+  border:none !important;
+  background-color: #efefef;
+  /* border-radius: 0 !important;
+  border-left: none !important;
+  border-top: none !important;
+  border-right: none !important; */
+}
+.pei_border{
+  background-color: transparent !important;
+}
