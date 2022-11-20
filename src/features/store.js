@@ -9,18 +9,20 @@ import commonApp from "./mobile/commonApp";
 
 //admin
 import commonAdmin from "./admin/commonAdmin";
+import toyprjAdmin from "./admin/toyprjAdmin";
 
 const reducers = combineReducers({
   //app
   commonApp: commonApp,
   //admin
-  commonAdmin:commonAdmin
+  commonAdmin: commonAdmin,
+  toyprjAdmin: toyprjAdmin,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["commonApp",],
+  whitelist: ["commonApp"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
