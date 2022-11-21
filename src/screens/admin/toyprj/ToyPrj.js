@@ -7,6 +7,7 @@ import {
 import Navbar from "../components/common/Navbar";
 import Sidebar from "../components/common/Sidebar";
 import Buttons from "../components/toyprj/Buttons";
+import ImgCsv from "../components/toyprj/ImgCsv";
 import Inputs from "../components/toyprj/Inputs";
 import Pagination from "../components/toyprj/Pagination";
 import ToyPrjDescription from "../components/toyprj/ToyPrjDescription";
@@ -52,7 +53,11 @@ const ToyPrj = () => {
           <Buttons />
         ) : tabName === "inputs" ? (
           <Inputs />
-        ) : (
+        ) : tabName ==="imgcsv"?(
+          <ImgCsv/>
+        )
+        :
+        (
           ""
         )}
       </div>

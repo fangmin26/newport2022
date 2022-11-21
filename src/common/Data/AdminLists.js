@@ -2,7 +2,7 @@ export const SideBarLists = [
   {
     icon: "icon",
     title: "home",
-    titleLink: "/admin/main",
+    titleLink: "/",
   },
   {
     icon: "icon",
@@ -180,3 +180,5 @@ export const BackSkillSetLists = [
     ],
   },
 ];
+
+export const errorMsgColor ="text-red-500"

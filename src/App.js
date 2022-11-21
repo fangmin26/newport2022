@@ -31,8 +31,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signup2" element={<Signup2 />} />
           {/* admin */}
-          <Route path="/" element={<AdminSignin />} />
-          <Route path="/admin/main" element={<AdminMain />} />
+          <Route path="/" element={<AdminMain />} />
           <Route path="/admin/signin" element={<AdminSignin />} />
           <Route path="/admin/project/webapp" element={<WebApp />} />
           <Route path="/admin/project/web" element={<Web />} />

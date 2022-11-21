@@ -21,3 +21,34 @@
 .translate-xy-50 {
   transform: translate(-50%, -50%);
 }
+
+/*input*/
+input[type="checkbox"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url("../public/img/checkoff.svg");
+  background-size: 24px 24px;
+}
+input[type="checkbox"]:checked {
+  width: 24px;
+  height: 24px;
+  border-color: transparent;
+  background-repeat: no-repeat;
+  background-image: url("../public/img/checkon.svg");
+  background-size: 24px 24px;
+}
+input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid gainsboro;
+  border-radius: 50%;
+}
+input[type="radio"]:checked {
+  border-color: transparent;
+  background-repeat: no-repeat;
+  background-color:black;
+}

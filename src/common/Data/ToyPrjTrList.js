@@ -346,7 +346,7 @@ export const ToyPrjDesc = [
   },
   {
     tabName: "inputs",
-    lines: ["-레이아웃 내 input 값 전달", "-리스트 추가, 삭제, 수정"],
+    lines: ["-object 형태 리스트 추가, 삭제, 초기화","- value 값에 맞는 정규식","-input 모두 빈값일때 toast, 버튼 unactive","-출력 리스트 중 이름값 중복 추가일 때 toast"],
   },
   {
     tabName: "imgcsv",
@@ -361,3 +361,54 @@ export const ToyPrjDesc = [
     lines: ["-singin 팝업,모달, 정규식", "-signup 정규식, 주소찾기"],
   },
 ];
+
+export const bdArrays = [
+  "outline-gray-400",
+  "outline-gray-500",
+  "outline-gray-600",
+  "outline-gray-700",
+  "outline-gray-800",
+];
+export const bWArrays = [
+  "outline-[1px]",
+  "outline-[2px]",
+  "outline-[3px]",
+  "outline-[4px]",
+  "outline-[5px]",
+];
+export const bgArrays = [
+  "bg-gray-100",
+  "bg-gray-200",
+  "bg-gray-300",
+  "bg-gray-400",
+  "bg-gray-500",
+];
+export const txtArrays = [
+  "text-gray-400",
+  "text-gray-500",
+  "text-gray-600",
+  "text-gray-700",
+  "text-gray-800",
+];
+export const radiusArrays = [
+  "10%",
+  "20%",
+  "30%",
+  "40%",
+  "50%",
+];
+export const checkboxArr = [
+  "check1",
+  "check2",
+  "check3",
+  "check4",
+  "check5"
+]
+
+export const selectArr = [
+  "select1",
+  "select2",
+  "select3",
+  "select4",
+  "select5"
+]

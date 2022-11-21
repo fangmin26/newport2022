@@ -24,7 +24,7 @@ const AdminSignin = () => {
 
   const loginOk = useCallback(()=>{
     toast(<p>로그인되었습니다.</p>, toastCommonProps('top-right', 'toast_alert',1000))
-    setTimeout(()=>navigate("/admin/main"),2000)
+    setTimeout(()=>navigate("/"),2000)
   },[toast, toastCommonProps]);
   const loginFalse = useCallback(()=>{
     toast(<p>아이디와 패스워드를 확인하세요.</p>, toastCommonProps('top-right', 'toast_fail',1000))
