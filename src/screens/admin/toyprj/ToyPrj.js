@@ -10,11 +10,12 @@ import Buttons from "../components/toyprj/Buttons";
 import ImgCsv from "../components/toyprj/ImgCsv";
 import Inputs from "../components/toyprj/Inputs";
 import Pagination from "../components/toyprj/Pagination";
+import SigninSignup from "../components/toyprj/SigninSignup";
 import ToyPrjDescription from "../components/toyprj/ToyPrjDescription";
 
 const ToyPrj = () => {
   const dispatch = useDispatch();
-  const tabs = ["pagination", "buttons", "inputs", "imgcsv", "signin"];
+  const tabs = ["pagination", "buttons", "inputs", "files", "signin"];
   const tabName = useSelector((state) => state.commonAdmin.sideSubtitle);
   const onClickTab = (e) => {
     dispatch(adminSideSubTitle(e.target.innerText));
@@ -53,8 +54,10 @@ const ToyPrj = () => {
           <Buttons />
         ) : tabName === "inputs" ? (
           <Inputs />
-        ) : tabName ==="imgcsv"?(
+        ) : tabName ==="files"?(
           <ImgCsv/>
+        ) : tabName ==="signin"?(
+          <SigninSignup />
         )
         :
         (

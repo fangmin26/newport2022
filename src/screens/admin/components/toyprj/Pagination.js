@@ -7,15 +7,15 @@ import JustFront from "../../toyprj/JustFront";
 const Pagination = () => {
   //이페이지는 백엔드로해야함 결국 백엔드 연결해야함 ㅋ
   const dispatch = useDispatch();
-  const page = useSelector((state) => state.commonAdmin.clickedPage);
   const [filters, setFilters] = useState({
     firstFilter: "개발언어",
     secondFilter: "개발",
   });
   const [filteringToyPrjList, setFilteringToyPrjList] = useState([]);
+
+  const page = useSelector((state) => state.commonAdmin.clickedPage);
   const perPage = 4;
   const [pages, setPages] = useState(0);
-
   const eachPage = filteringToyPrjList.slice(
     (page - 1) * perPage,
     page * perPage

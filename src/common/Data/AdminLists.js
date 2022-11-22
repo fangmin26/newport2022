@@ -28,7 +28,7 @@ export const SideBarLists = [
     subtitle1: "pagination",
     subtitle2: "buttons",
     subtitle3: "inputs",
-    subtitle4: "imgcsv",
+    subtitle4: "files",
     subtitle5: "signin",
     titleLink: "/admin/toyprj",
     subtitle1Link: "/admin/toyprj",

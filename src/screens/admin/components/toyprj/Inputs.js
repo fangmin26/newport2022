@@ -18,7 +18,7 @@ const Inputs = () => {
   const checkBirthFc = newInput.birth ==="" ||checkBirth(newInput.birth)
   const checkPhoneFc = newInput.phone ==="" ||checkPhone(newInput.phone)
   const inputAllNotFilled = newInput.name === "" ||newInput.birth ==="" || newInput.phone === "";
-
+  const checkAll = checkNameFc&& checkBirthFc &&checkPhoneFc
   const onChangeInput = (e) =>{
     const {value, name} = e.target
     setNewInput({...newInput, [name]:value})
@@ -64,7 +64,7 @@ const onClickNew = () =>{
     inputs[i].value = ""
   }
 }
-
+console.log(checkNameFc&& checkBirthFc &&checkPhoneFc)
   return(
       <BlackLabel title={"input 값 입력, 리스트 출력, 삭제 ,초기화"}>
         <div className="w-full flex justify-end p-4">
@@ -127,7 +127,10 @@ const onClickNew = () =>{
               type="text"
               onChange={onChangeInput}
               onKeyPress={(e) => {
-                if (e.key === "Enter") onCLickInput();
+                if (e.key === "Enter")
+                  if(checkAll){
+                    onCLickInput();
+                  }
               }}
               />
               <p className={!checkPhoneFc? errorMsgColor: ""}>
@@ -137,11 +140,11 @@ const onClickNew = () =>{
         </div>
         <BGButton
           title={"리스트 추가"}
-          bgColor={!inputAllNotFilled && checkNameFc&& checkBirthFc &&checkPhoneFc  ?"bg-gray-600":"bg-gray-200"} 
-          hoverBgColor={!inputAllNotFilled && checkNameFc&& checkBirthFc &&checkPhoneFc ?"bg-gray-800":""}
+          bgColor={!inputAllNotFilled && checkAll ?"bg-gray-600":"bg-gray-200"} 
+          hoverBgColor={!inputAllNotFilled &&checkAll ?"bg-gray-800":""}
           textSize={"text-lg"}
           textColor={"text-[#ffffff]"}
-          onClickFunc={checkNameFc&& checkBirthFc &&checkPhoneFc?onCLickInput:undefined}
+          onClickFunc={checkAll?onCLickInput:undefined}
           />
           <div>
             {arrs.map((el,idx)=>(
