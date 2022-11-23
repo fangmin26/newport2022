@@ -7,7 +7,6 @@ import  { BDButton, BGButton } from '../components/common/Button'
 import { LeftLabelInput } from '../components/common/Input'
 
 const Signin = () => {
-  const allowkey = useSelector((state)=>state.commonApp.allowkey)
   const navigate= useNavigate();
   const [login, setLogin] = useState({
     userid:"",
@@ -31,38 +30,15 @@ const Signin = () => {
   },[toast, toastCommonProps]);
 
   const onClickLogin = () =>{
-    if(allowkey){
-      //dispatch함수..
-      loginOk();
-    }else{
+
       if(login.userid.replace(" ","") ==="PEI_01" && login.pass.replace(" ","") ==="1111"){
         loginOk();
       }else{
         loginFalse();
       }      
-    }
+
   }
-  const onClickFindId=()=>{
-    if(allowkey){
-      navigate('/findid')
-    }else{
-      callme()
-    }
-  }
-  const onClickFindPw = () =>{
-    if(allowkey){
-      navigate('/findpw')
-    }else{
-      callme()
-    }
-  }
-  const onClickSignup = () =>{
-    if(allowkey){
-      navigate('/signup')
-    }else{
-      callme()
-    }
-  }
+
 
   return (
     <div className=' h-screen'>
@@ -109,15 +85,15 @@ const Signin = () => {
         hoverBgColor={"hover:bg-red-200"}
         textSize={"text-lg"}
         textColor={"text-[#000]"}
-        onClickFunc={onClickSignup}
+       // onClickFunc={onClickSignup}
         />
       </div>
       <div className='pt-4 flex justify-end gap-x-2'>
         <span className='hover:bg-red-100 p-2 rounded cursor-pointer text-sm'
-        onClick={onClickFindId}
+       // onClick={onClickFindId}
         >아이디 찾기</span>
         <span className='hover:bg-red-100 p-2 rounded cursor-pointer text-sm'
-        onClick={onClickFindPw}
+       // onClick={onClickFindPw}
         >비밀번호 찾기</span>
       </div>
     </div>

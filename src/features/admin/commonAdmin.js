@@ -5,8 +5,6 @@ const initialState = {
   sideSubtitle: "",
   scrollAction: false,
   clickedPage: 1,
-  // allowkey true면 backend 켜기, false면 front만
-  allowkey: false,
 };
 
 const commonAdmin = createSlice({

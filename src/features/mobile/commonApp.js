@@ -2,8 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   navActive: "intro",
-  // allowkey true면 backend 켜기, false면 front만
-  allowkey:false
 };
 
 const commonApp = createSlice({
