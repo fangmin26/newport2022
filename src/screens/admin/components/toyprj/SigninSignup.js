@@ -19,7 +19,7 @@ const SigninSignup = () => {
     const {name,value} = e.target;
     setLogin({...login, [name]:value});
   }
-
+//
   const loginOk = useCallback(()=>{
     toast(<p>로그인되었습니다.</p>, toastCommonProps('top-right', 'toast_alert',1000))
     setModal(true)
