@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/newport2022/static/css/main.a52ab900.css",
-    "main.js": "/newport2022/static/js/main.52d55c91.js",
+    "main.css": "/newport2022/static/css/main.74949152.css",
+    "main.js": "/newport2022/static/js/main.c337a643.js",
+    "static/media/sampleimage.jpg": "/newport2022/static/media/sampleimage.5bdc8a3a66f35523dd58.jpg",
     "index.html": "/newport2022/index.html",
-    "main.a52ab900.css.map": "/newport2022/static/css/main.a52ab900.css.map",
-    "main.52d55c91.js.map": "/newport2022/static/js/main.52d55c91.js.map"
+    "static/media/checkon.svg": "/newport2022/static/media/checkon.08d47c8e74b3f932ad59.svg",
+    "static/media/checkoff.svg": "/newport2022/static/media/checkoff.f54eb7af7c005df3237d.svg",
+    "main.74949152.css.map": "/newport2022/static/css/main.74949152.css.map",
+    "main.c337a643.js.map": "/newport2022/static/js/main.c337a643.js.map"
   },
   "entrypoints": [
-    "static/css/main.a52ab900.css",
-    "static/js/main.52d55c91.js"
+    "static/css/main.74949152.css",
+    "static/js/main.c337a643.js"
   ]
 }
