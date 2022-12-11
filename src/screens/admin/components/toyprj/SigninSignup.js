@@ -108,7 +108,7 @@ const SigninSignup = () => {
               <CenterModal height={"h-[400px]"} onClickClose={()=>setModal(false)}>
                 <div className='relative'>
                   <img
-                    src={process.env.PUBLIC_URL + "/img/close.svg"}
+                    src={process.env.PUBLIC_URL + "/images/close.svg"}
                     className="cursor-pointer absolute top-0 right-0"
                     alt="닫기"
                     onClick={()=>setModal(false)}
@@ -131,7 +131,7 @@ const SigninSignup = () => {
             />
             <div className='pt-4 flex gap-x-4 justify-center'>
               <span className='hover:text-gray-600 cursor-pointer text-sm'
-            onClick={onClickFindId}
+            // onClick={onClickFindId}
               >아이디 찾기</span>
               <span className='block w-[1px] h-[20px] bg-black'></span>
               <span className='hover:text-gray-600 cursor-pointer text-sm'

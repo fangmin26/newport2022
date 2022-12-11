@@ -67,7 +67,7 @@ const SidebarList = ({ el, idx }) => {
         onClick={() => goLink("title")}
       >
         <div className="flex gap-x-4 ">{el.title}</div>
-        <img src={process.env.PUBLIC_URL + "/img/arrow_down.svg"} alt="하단" />
+        <img src={process.env.PUBLIC_URL + "/images/arrow_down.svg"} alt="하단" />
       </div>
       {titleName === el.title && el.subtitle1 !== undefined ? (
         <motion.div

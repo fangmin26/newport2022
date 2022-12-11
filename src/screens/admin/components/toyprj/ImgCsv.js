@@ -100,7 +100,7 @@ const ImgCsv = () => {
           <div className='flex gap-x-4'>
             <label htmlFor="camera-image" className="w-[80px] cursor-pointer">
               <span className="inline-block border border-gray_90 w-[80px] h-[80px] flex justify-center items-center">
-                <img src={process.env.PUBLIC_URL + "/img/camera.svg"} alt="카메라" />
+                <img src={process.env.PUBLIC_URL + "/images/camera.svg"} alt="카메라" />
               </span>
             </label>
             <div>
@@ -111,7 +111,7 @@ const ImgCsv = () => {
                     backgroundImage: `url(${el})`
                   }}
                   >
-                    <img src={process.env.PUBLIC_URL + "/img/close.svg"} alt="닫기" 
+                    <img src={process.env.PUBLIC_URL + "/images/close.svg"} alt="닫기" 
                     className='absolute top-0 right-0 w-[36px] cursor-pointer'
                     onClick={()=>onClickDeletePhoto(idx)}
                     />

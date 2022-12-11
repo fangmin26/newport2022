@@ -6,7 +6,7 @@ const ToyCenter = ({ showClickClose, data }) => {
     <CenterModal onClickClose={showClickClose}>
       <div className="px-16 py-6 ">
         <img
-          src={process.env.PUBLIC_URL + "/img/close.svg"}
+          src={process.env.PUBLIC_URL + "/images/close.svg"}
           className="cursor-pointer absolute top-0 right-0"
           alt="닫기"
           onClick={showClickClose}

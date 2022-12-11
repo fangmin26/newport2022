@@ -157,7 +157,7 @@ console.log(checkNameFc&& checkBirthFc &&checkPhoneFc)
                 </ul>
                 <div>
                   <img
-                    src={process.env.PUBLIC_URL + "/img/close.svg"}
+                    src={process.env.PUBLIC_URL + "/images/close.svg"}
                     className="cursor-pointer"
                     alt="닫기"
                     onClick={()=>onCLickDeleteId(idx)}

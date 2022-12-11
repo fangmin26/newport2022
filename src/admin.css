@@ -29,7 +29,7 @@ input[type="checkbox"] {
   height: 24px;
   border-color: transparent;
   background-repeat: no-repeat;
-  background-image: url("../public/img/checkoff.svg");
+  background-image: url("../public/images/checkoff.svg");
   background-size: 24px 24px;
 }
 input[type="checkbox"]:checked {
@@ -37,7 +37,7 @@ input[type="checkbox"]:checked {
   height: 24px;
   border-color: transparent;
   background-repeat: no-repeat;
-  background-image: url("../public/img/checkon.svg");
+  background-image: url("../public/images/checkon.svg");
   background-size: 24px 24px;
 }
 input[type="radio"] {
