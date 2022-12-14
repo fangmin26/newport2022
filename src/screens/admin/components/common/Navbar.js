@@ -1,17 +1,23 @@
 import dayjs from "dayjs";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
+
 import {
 
   startScroll,
 } from "../../../../features/admin/commonAdmin";
+import PhotoCard from "./PhotoCard";
 const Navbar = () => {
   const [inputVal,setInputVal] = useState("");
   const [openPutModal, setOpenPutModal] = useState(false)
   const scrollFunc = useSelector((state) => state.commonAdmin.scrollAction);
   const dispatch = useDispatch();
+  const [files, setFiles] = useState([]);
 
+  const [loadedImage, setLoadedImage] = useState([]);
   const onChangeInput = (e) =>{
       setInputVal(e.target.value)
   }
@@ -31,6 +37,8 @@ const Navbar = () => {
 
   ]
 
+
+
   const searchList = (el) =>{
     return(
       <>
@@ -46,6 +54,56 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const onAddThumbnail = (e) => {
+    let fileUrls = [];
+    let cameraArr = [];
+    let alertnum = 0;
+      for (let i = 0; i < e.target.files.length; i++) {
+      let reader = new FileReader()
+      reader.readAsDataURL(e.target.files[i])
+      const includesLastModified = files.filter((el)=>(el.lastModified === e.target.files[i].lastModified && el.name === e.target.files[i].name))
+      //같은 파일 제외하고 배열 저장
+      if(includesLastModified.length===0){
+          cameraArr.push(e.target.files[i])
+          setFiles(files.concat(cameraArr))
+          reader.onload = () => {
+            fileUrls[i] = reader.result
+            setLoadedImage(loadedImage.concat(fileUrls))
+            e.target.value = ""
+          }
+    }
+  }
+}
+const onDeleteValue = (el,idx)=>{
+  const filterLoaded = loadedImage.filter((img)=>img!==el)
+  setLoadedImage(filterLoaded)
+  const filterFiles = files.filter((img)=>img!==files[idx])
+  setFiles(filterFiles)
+}
+const [contents, setContents] = useState(null)
+  const QuillRef = useRef();
+  const modules = useMemo(
+    () => ({
+      toolbar: {
+        container: [
+          ["bold", "italic", "underline", "strike", "blockquote"],
+          [{ size: ["small", false, "large", "huge"] }, { color: [] }],
+          [
+            { list: "ordered" },
+            { list: "bullet" },
+            { indent: "-1" },
+            { indent: "+1" },
+            { align: [] },
+          ],
+          ["image", "video"],
+        ],
+
+      },
+    }),
+    []
+  );
+  console.log(contents,">?")
+  console.log(files,'>?')
   return (
     <>
      <header
@@ -84,6 +142,11 @@ const Navbar = () => {
         <div className="z-10 absolute top-0 right-0 w-[800px] h-full bg-white p-6 shadow-lg">
           <div className="flex flex-col gap-y-4">
             <div className="flex gap-x-4 items-center">
+                <label className="w-[100px]">subject 추가</label>
+                <input className="border w-full p-2 outline-none"/>
+                <span className="bg-gray-200 p-2 w-[100px] text-center">추가</span>
+            </div>
+            <div className="flex gap-x-4 items-center">
               <label className="w-[100px]">subject</label>
               <select className="p-2 outline-none border w-full">
                 <option>library</option>
@@ -97,8 +160,30 @@ const Navbar = () => {
             </div>
             <div className="flex gap-x-4 items-center">
              <label className="w-[100px]">content</label>
-              <textarea className="border w-full h-[500px] outline-none p-2"/>
-
+              <ReactQuill
+               ref={(element) => {
+                  if (element !== null) {
+                    QuillRef.current = element;
+                  }
+                }}
+                value={contents}
+                onChange={setContents}
+                modules={modules}
+                theme="snow"
+                placeholder="내용을 입력해주세요."
+              />
+            </div>
+            <div className="flex flex-wrap gap-x-4 items-center">
+             <label className="w-[100px]">content</label>
+             <PhotoCard onAddThumbnail={onAddThumbnail} />
+             {loadedImage.map((el,idx)=>(
+                <li key={idx} className="w-[200px] relative">
+                  <span 
+                  onClick={()=>onDeleteValue(el,idx)} 
+                   className="absolute right-3 top-3 bg-gray-100">닫기</span>
+                  <img src={el} className="w-full h-auto"/>
+                </li>
+              ))}
             </div>
             <div>여기에 npm으로 만든 text editor을 넣기, 만든 에디터는 댓글작성시 넣을수 있게 하기</div>
             <div className="bg-gray-100 roudned p-2 text-center"
