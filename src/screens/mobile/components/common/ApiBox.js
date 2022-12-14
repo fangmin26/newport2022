@@ -9,8 +9,8 @@ export const ApiBox = ({list,contact,}) => {
       {contact!==undefined?
       <div className="bg-black rounded p-4 outline outline-1 outline-offset-0 flex gap-x-4 items-start ">
         <ul >
-          {list.map((el)=>(
-            <li key={el.cont}>
+          {list.map((el,idx)=>(
+            <li key={idx}>
               <span className={el.lefttextcolor}>{el.left}</span>
               <span className={el.righttextcolor}> {el.right}</span>
             </li>

@@ -3,12 +3,13 @@ import { useDispatch } from 'react-redux'
 import { adminSideTitle } from '../../features/admin/commonAdmin'
 import Navbar from './components/common/Navbar'
 import Sidebar from './components/common/Sidebar'
+import Pagination from "pagination-peiss"
 const AdminMain = () => {
   const dispatch = useDispatch()
   useEffect(()=>{
-    dispatch(adminSideTitle("home"))
+    dispatch(adminSideTitle("/"))
   },[dispatch,adminSideTitle])
-
+  const page = 1;
   const lists = [
     {id:1, title:"title1",src:"bg-[url('../public/images/photos/sampleimage.jpg')]", content:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. L..."},
     {id:2, title:"title2",src:"bg-[url('../public/images/photos/sampleimage.jpg')]", content:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. L...", tags:["sql","javascript","aws","python"]},
@@ -18,6 +19,7 @@ const AdminMain = () => {
     {id:6, title:"title1",src:"bg-[url('../public/images/photos/sampleimage.jpg')]", content:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. L...", tags:["sql","javascript","aws","python"]}
   ]
   const mainList = (el) =>{
+
     return( 
       <>
         <div className={'bg-gray-100 h-[250px] ' +el.src} ></div>
@@ -39,7 +41,7 @@ const AdminMain = () => {
     <div className='w-full h-screen'>
       <Sidebar/>
       <Navbar/>
-      <section className='pt-[120px] pb-[60px]'>
+      <section className='pt-[120px] pb-[160px] w-5/6'>
         <div className={'text-white border-b  h-[500px] px-12 py-8 flex justify-end items-left flex-col '+
         "bg-[url('../public/images/photos/sampleimage.jpg')]"}
         >
@@ -47,12 +49,26 @@ const AdminMain = () => {
             <h2>this is the subtitle. the first row</h2>
             <h2>this is the subtitle. and the second row </h2>
         </div>
-        <ul className='w-5/6 grid grid-cols-4 gap-4 p-6'>
+        <ul className=' grid grid-cols-4 gap-4 p-6'>
           {lists.map((el,idx)=>
           <li key={idx}>{mainList(el)}</li>
           )}
         </ul>
+        <div className='flex justify-center'>
+          <Pagination
+            totalCount={300}
+            pagePerList={10}
+            activePage={page}
+            onClick={(page)=>console.log(page)}
+            prevText={"<"}
+            nextText={">"}
+            prevEndText={"<<"}
+            nextEndText={">>"}
+          />
+        </div>
+
       </section>
+
     </div>
   )
 }

@@ -37,6 +37,7 @@ const SidebarList = ({ el, idx }) => {
       dispatch(adminSideSubTitle(el.subtitle6));
     }
   };
+  console.log(titleName,">?")
   const subList = (subTitleName, elSubtitle, elSubtitleLink) => {
     return (
       <>
@@ -64,10 +65,12 @@ const SidebarList = ({ el, idx }) => {
     >
       <div
         className="flex justify-between py-4 cursor-pointer"
-        onClick={() => goLink("title")}
+        onClick={() => {goLink("title");console.log(el.title, titleName)}}
       >
         <div className="flex gap-x-4 ">{el.title}</div>
-        <img src={process.env.PUBLIC_URL + "/images/arrow_down.svg"} alt="하단" />
+        <img src={process.env.PUBLIC_URL + "/images/arrow_down.svg"} alt="하단" 
+        className={titleName === el.title?"transition-all rotate-90  duration-500 ease-linear ":"transition-all rotate-0  duration-500 ease-linear"}
+        />
       </div>
       {titleName === el.title && el.subtitle1 !== undefined ? (
         <motion.div
